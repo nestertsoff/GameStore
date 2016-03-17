@@ -1,0 +1,99 @@
+﻿@using GameStore.Web.Resouces
+@model GameStore.Web.Areas.Common.Models.GameFilterViewModel
+
+
+<table class="table">
+    <tr>
+        <th>
+            @(this.Html.DisplayName(Resource.Key))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.Name))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.Price))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.InStock))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.Discontinued))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.Genres))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.Platforms))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.CompanyName))
+        </th>
+    </tr>
+
+    @foreach (var item in this.Model.Games)
+    {
+        <tr>
+            <td>
+                @(this.Html.DisplayFor(modelItem => item.Key))
+            </td>
+            <td>
+                @(this.Html.DisplayFor(modelItem => item.Name))
+            </td>
+            <td>
+                @(this.Html.DisplayFor(modelItem => item.Price))
+            </td>
+            <td>
+                @(this.Html.DisplayFor(modelItem => item.UnitsInStock))
+            </td>
+            <td>
+                @(this.Html.DisplayFor(modelItem => item.Discontinued))
+            </td>
+            <td>
+                @foreach (var genre in item.Genres)
+                {
+                    @genre.Name
+                    <br/>
+                }
+            </td>
+            <td>
+                @foreach (var platformType in item.PlatformTypes)
+                {
+                    @platformType.Type
+                    <br/>
+                }
+            </td>
+            <td>
+                @if (item.Publisher == null)
+                {
+                    <span>None</span>
+                }
+                else
+                {
+                    @(this.Html.ActionLink(item.Publisher.CompanyName, "Details", "Publisher", new { companyName = item.Publisher.CompanyName }, null))
+                }
+            </td>
+            <td>
+                <a href=@(this.Url.Action("Details", "Game", new { gameKey = item.Key })) title="@Resource.GameDetails">
+                    <span class=" fa fa-info-circle"></span>
+                </a>
+                |
+                <a href=@(this.Url.Action("Edit", "Game", new { gameKey = item.Key })) title="@Resource.EditGame">
+                    <span class=" fa fa-pencil-square-o"></span>
+                </a>
+                |
+                <a href=@(this.Url.Action("Delete", "Game", new { gameKey = item.Key })) title="@Resource.DeleteGame">
+                    <span class=" fa fa-trash"></span>
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="pager">
+    @for (var i = 1; i <= this.Model.PagingInfo.TotalPages; i++)
+    {
+        @(i == this.Model.PagingInfo.CurrentPage ? 
+        this.Html.ActionLink(i.ToString(), "Games", "Game", null, new { @class = "pageLink", id = "currentPage", value = i }) : 
+        this.Html.ActionLink(i.ToString(), "Games", "Game", null, new { @class = "pageLink", value = i }))
+    }
+</div>

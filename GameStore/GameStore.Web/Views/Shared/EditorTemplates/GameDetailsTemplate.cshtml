@@ -1,0 +1,79 @@
+﻿@model GameStore.Web.Areas.Common.Models.ShowGameViewModel
+
+<dd>
+<dl class="dl-horizontal">
+    <dt>
+        @(this.Html.DisplayNameFor(model => model.Key))
+    </dt>
+    <dd>
+        @(this.Html.DisplayFor(model => model.Key))
+    </dd>
+
+    <dt>
+        @(this.Html.DisplayNameFor(model => model.Name))
+    </dt>
+
+    <dd>
+        @(this.Html.DisplayFor(model => model.Name))
+    </dd>
+
+    <dt>
+        @(this.Html.DisplayNameFor(model => model.Description))
+    </dt>
+
+    <dd>
+        @(this.Html.DisplayFor(model => model.Description))
+    </dd>
+
+    <dt>
+        @(this.Html.DisplayNameFor(model => model.Price))
+    </dt>
+
+    <dd>
+        @(this.Html.DisplayFor(model => model.Price))
+    </dd>
+
+    <dt>
+        @(this.Html.DisplayNameFor(model => model.UnitsInStock))
+    </dt>
+
+    <dd>
+        @(this.Html.DisplayFor(model => model.UnitsInStock))
+    </dd>
+
+    <dt>
+        @(this.Html.DisplayNameFor(model => model.Publisher))
+    </dt>
+
+
+    <dd>
+        @if (this.Model.Publisher == null)
+        {
+            <span>None</span>
+        }
+        else
+        {
+            @(this.Html.ActionLink(this.Model.Publisher.CompanyName, "Details", "Publisher", new { companyName = this.Model.Publisher.CompanyName }, null))
+        }
+    </dd>
+    <dt>
+        @(this.Html.DisplayNameFor(model => model.Genres))
+    </dt>
+    <dd>
+        @foreach (var genre in this.Model.Genres)
+        {
+            <span>@genre.Name</span>
+        }
+    </dd>
+
+    <dt>
+        @(this.Html.DisplayNameFor(model => model.PlatformTypes))
+    </dt>
+
+    <dd>
+        @foreach (var platformType in this.Model.PlatformTypes)
+        {
+            <span>@platformType.Type</span>
+        }
+    </dd>
+</dl>

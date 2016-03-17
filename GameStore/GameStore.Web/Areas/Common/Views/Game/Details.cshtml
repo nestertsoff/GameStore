@@ -1,0 +1,23 @@
+﻿@using GameStore.Web.Resouces
+@model GameStore.Web.Areas.Common.Models.ShowGameViewModel
+
+@{
+    this.ViewBag.Title = "Details";
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(this.Html.EditorForModel("GameDetailsTemplate"))
+
+<div class="bar link-bar">
+    <a href=@(this.Url.Action("Buy", "Order", new { gameKey = this.Model.Key, area = "Payment" }, null)) title="@Resource.Buy">
+        <span class="fa fa-shopping-cart"> @Resource.Buy</span>
+    </a>
+    |
+    <a href=@(this.Url.Action("Download", "Game", new { gameKey = this.Model.Key})) title="@Resource.Download" target = "_blank" >
+        <span class="fa fa fa-download"> @Resource.Download</span>
+    </a>
+    |
+    <a href=@(this.Url.Action("Comments", "Comment", new { gameKey = this.Model.Key })) title="@Resource.Comments">
+        <span class="fa fa-comments"> @Resource.Comments</span>
+    </a>
+</div>

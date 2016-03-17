@@ -1,0 +1,28 @@
+﻿@using GameStore.Web.Resouces
+@model GameStore.Web.Areas.Common.Models.ShowGameViewModel
+
+@{
+    this.ViewBag.Title = "Delete";
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@Resource.DeleteGameConfirmation</h3>
+
+@(this.Html.EditorForModel("GameDetailsTemplate"))
+
+@using (this.Html.BeginForm("Delete", "Game", FormMethod.Post))
+{
+    @(this.Html.AntiForgeryToken())
+    
+    @Html.HiddenFor(model => model.Key)
+    
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-4">
+            @using (this.Html.BeginForm("Games", "Game", FormMethod.Get))
+            {
+                <input type="submit" value="No" class="btn btn-default"/>
+            }
+            <input type="submit" value="Yes" class="btn btn-default"/>
+        </div>
+    </div>
+}

@@ -1,0 +1,20 @@
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List?page=3 |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Key'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/List |              logger GameStore.Application.Services.Abstract.IGameService |              callSite GameStore.Application.Services.Concrete.GameService.GetByKey |             eventProperties: 

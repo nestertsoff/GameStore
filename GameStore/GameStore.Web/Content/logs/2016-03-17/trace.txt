@@ -1,0 +1,107 @@
+message: Controller: Game Action: Games Time: 85060 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 85623 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: Games Time: 87046 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Games |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: Details Time: 87680 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/game_33 |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 87981 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/game_33 |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Comment Action: Comments Time: 88864 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/game_33/Comments |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 88866 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/game_33/Comments |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Comment Action: Comments Time: 106230 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/game_33/Comments |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.SqlClient.SqlProviderServices.<>c__DisplayClass30_0.<DbCreateDatabase>b__0(SqlConnection conn)
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.DbCreateDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at System.Data.Objects.ObjectContext.CreateDatabase()
+   at System.Data.Entity.Migrations.Utilities.DatabaseCreator.Create(DbConnection connection)
+   at System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists()
+   at System.Data.Entity.Migrations.Infrastructure.MigratorBase.EnsureDatabaseExists()
+   at System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   at System.Data.Entity.Migrations.Infrastructure.MigratorBase.Update()
+   at System.Data.Entity.Internal.DatabaseCreator.CreateDatabase(InternalContext internalContext, Func`3 createMigrator, ObjectContext objectContext)
+   at System.Data.Entity.Internal.InternalContext.CreateDatabase(ObjectContext objectContext)
+   at System.Data.Entity.Database.Create(Boolean skipExistsCheck)
+   at System.Data.Entity.Database.Create()
+   at System.Data.Entity.DropCreateDatabaseAlways`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.DbExtensions.Include[T](IQueryable`1 source, String path)
+   at System.Data.Entity.DbExtensions.Include[T,TProperty](IQueryable`1 source, Expression`1 path)
+   at GameStore.DAL.GameStore.Repositories.Concrete.GameRepository.Get() in B:\sergey\Desktop\MvcTask1\net-lab-3\GameStore\GameStore.Domain.GameStore\Repositories\Concrete\GameRepository.cs:line 27
+   at GameStore.DAL.Infrastructure.CombineRepositories.Concrete.GenericCombineRepository`2.Get() in B:\sergey\Desktop\MvcTask1\net-lab-3\GameStore\GameStore.Infrastructure\CombineRepositories\Concrete\GenericCombineRepository.cs:line 32
+   at GameStore.BLL.Services.Concrete.GameService.Get() in B:\sergey\Desktop\MvcTask1\net-lab-3\GameStore\GameStore.Application\Services\Concrete\GameService.cs:line 52 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.BLL.Services.Abstract.IGameService |              callSite GameStore.BLL.Services.Concrete.GameService.Get |             eventProperties: 
+message: Controller: Game Action: Games Time: 46213 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.SqlClient.SqlProviderServices.<>c__DisplayClass30_0.<DbCreateDatabase>b__0(SqlConnection conn)
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.DbCreateDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at System.Data.Objects.ObjectContext.CreateDatabase()
+   at System.Data.Entity.Migrations.Utilities.DatabaseCreator.Create(DbConnection connection)
+   at System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists()
+   at System.Data.Entity.Migrations.Infrastructure.MigratorBase.EnsureDatabaseExists()
+   at System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   at System.Data.Entity.Migrations.Infrastructure.MigratorBase.Update()
+   at System.Data.Entity.Internal.DatabaseCreator.CreateDatabase(InternalContext internalContext, Func`3 createMigrator, ObjectContext objectContext)
+   at System.Data.Entity.Internal.InternalContext.CreateDatabase(ObjectContext objectContext)
+   at System.Data.Entity.Database.Create(Boolean skipExistsCheck)
+   at System.Data.Entity.Database.Create()
+   at System.Data.Entity.DropCreateDatabaseAlways`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.DbExtensions.Include[T](IQueryable`1 source, String path)
+   at System.Data.Entity.DbExtensions.Include[T,TProperty](IQueryable`1 source, Expression`1 path)
+   at GameStore.DAL.GameStore.Repositories.Concrete.GameRepository.Get() in B:\sergey\Desktop\MvcTask1\net-lab-3\GameStore\GameStore.Domain.GameStore\Repositories\Concrete\GameRepository.cs:line 27
+   at GameStore.DAL.Infrastructure.CombineRepositories.Concrete.GenericCombineRepository`2.Get() in B:\sergey\Desktop\MvcTask1\net-lab-3\GameStore\GameStore.Infrastructure\CombineRepositories\Concrete\GenericCombineRepository.cs:line 32
+   at GameStore.BLL.Services.Concrete.GameService.Get() in B:\sergey\Desktop\MvcTask1\net-lab-3\GameStore\GameStore.Application\Services\Concrete\GameService.cs:line 52 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.BLL.Services.Abstract.IGameService |              callSite GameStore.BLL.Services.Concrete.GameService.Get |             eventProperties: 
+message: Controller: Game Action: Games Time: 14846 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: Games Time: 43638 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 44158 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Order Action: Basket Time: 44162 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Order/Basket |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 44163 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Order/Basket |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: Create Time: 44422 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Games/New |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 44423 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Games/New |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: Games Time: 45661 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 46528 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Home Action: ChangeCulture Time: 46534 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Home |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: Games Time: 47448 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 47450 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Home Action: ChangeCulture Time: 47450 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Home |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: Games Time: 47980 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 47981 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Home Action: ChangeCulture Time: 47981 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Home |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: Games Time: 48837 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 
+message: Controller: Game Action: GetGameCount Time: 48838 |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: / |              logger GameStore.Web.Filters.LogAttribute |              callSite GameStore.Web.Filters.LogAttribute.OnActionExecuted |             eventProperties: 

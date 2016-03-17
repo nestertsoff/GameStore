@@ -1,0 +1,44 @@
+﻿@using GameStore.Web.Resouces
+@{
+    this.ViewBag.Title = "Details";
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (this.Model.OrderDetailsList == null)
+{
+    <div>@Resource.EmptyBasket</div>
+}
+else
+{
+    foreach (var details in this.Model.OrderDetailsList)
+    {
+            <dl class="dl-horizontal">
+                <dt>
+                    @(this.Html.DisplayName(Resource.Name))
+                </dt>
+
+                <dd>
+                    <span>@details.ProductName</span>
+                </dd>
+
+                <dt>
+                    @(this.Html.DisplayName(Resource.Quantity))
+                </dt>
+
+                <dd>
+                    <span>@details.Quantity</span>
+                </dd>
+
+                <dt>
+                    @(this.Html.DisplayName(Resource.Discount))
+                </dt>
+
+                <dd>
+                    <span>@details.Discount</span>
+                </dd>
+            </dl>
+    }
+}
+
+
+@Html.ActionLink("Make ORDER", "Create", "Order", null, new { area = "Payment" })

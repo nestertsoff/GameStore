@@ -1,0 +1,4 @@
+message: Validation failed: 
+ -- The specified condition was not met for 'Company Name'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /publisher/companyname |              logger GameStore.Application.Services.Abstract.IPublisherService |              callSite GameStore.Application.Services.Concrete.PublisherService.GetByCompanyName |             eventProperties: 
+message: Validation failed: 
+ -- The specified condition was not met for 'Company Name'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /publisher/new |              logger GameStore.Application.Services.Abstract.IPublisherService |              callSite GameStore.Application.Services.Concrete.PublisherService.GetByCompanyName |             eventProperties: 

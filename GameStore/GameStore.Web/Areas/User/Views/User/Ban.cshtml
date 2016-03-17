@@ -1,0 +1,27 @@
+﻿@using GameStore.Web.Areas.User.Models
+@model BanType
+@{
+    this.ViewBag.Title = "Ban";
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ban</h2>
+@using (this.Html.BeginForm("Ban", "User", FormMethod.Post))
+{
+    <p>
+        @foreach (var item in Enum.GetValues(typeof(BanType)))
+        {
+            <p>
+                @if (!item.Equals(BanType.Permanent))
+                {
+                    <span>@(this.Html.RadioButtonFor(x => @item, this.Model)) 1 @item</span>
+                }
+                else
+                {
+                    <span>@(this.Html.RadioButtonFor(x => @item, this.Model)) @item</span>
+                }
+            </p>
+        }
+        <input type="submit" value="Ban"/>
+    </p>
+}

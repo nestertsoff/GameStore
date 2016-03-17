@@ -1,0 +1,26 @@
+﻿@model GameStore.Web.Areas.Payment.Models.PaymentTypes.VisaViewModel
+
+@{
+    ViewBag.Title = "Visa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Visa</h2>
+<div class="invoice-body">
+    <div class="form-group">
+        <span class="property-title">@Html.DisplayNameFor(x => x.CardNumber):</span>
+        <span class="property-editor">@Html.DisplayFor(x => x.CardNumber)</span>
+    </div>
+    <div class="form-group">
+        <span class="property-title">@Html.DisplayNameFor(x => x.CardHoldersName):</span>
+        <span class="property-editor">@Html.DisplayFor(x => x.CardHoldersName)</span>
+    </div>
+    <div class="form-group">
+        <span class="property-title">@Html.DisplayNameFor(x => x.DateOfExpity):</span>
+        <span class="property-editor">@Model.DateOfExpity.Month/@Model.DateOfExpity.Year</span>
+    </div>
+    <div class="form-group">
+        <span class="property-title">@Html.DisplayNameFor(x => x.CardVerificationValue):</span>
+        <span class="property-editor">@Html.DisplayFor(x => x.CardVerificationValue)</span>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@using GameStore.Web.Resouces
+<div class="bar left-bar">
+    <a id="game-count" href=@(this.Url.Action("Games", "Game", new { area = "Common" })) title="@Resource.ShowAllGames">
+        <span class="fa fa-gamepad"> @Resource.GameNumber: @{ this.Html.RenderAction("GetGameCount", "Game", new { area = "Common"}); } </span>
+    </a>
+    |
+    <a id="add-game" href=@(this.Url.Action("Create", "Game", new { area = "Common" })) title="@Resource.AddGame">
+        <span class="fa fa-plus-square"> @Resource.Add</span>
+    </a>
+</div>
+<div class="bar right-bar">
+    <a href=@(this.Url.Action("Basket", "Order", new { area = "Payment" })) title="@Resource.GoToBasket">
+        <span class="fa fa-shopping-cart"> @Resource.Basket</span> 
+    </a>
+    |
+    <a href=@(this.Url.Action("ChangeCulture", "Home", new { area = "Common" })) title="@Resource.ChangeLanguage">
+        <span class="fa fa-language" > @Resource.Language</span> 
+    </a>
+</div>

@@ -1,0 +1,62 @@
+﻿@using GameStore.Web.Resouces
+@model GameStore.Web.Areas.Payment.Models.OrderViewModel
+
+@{
+    this.ViewBag.Title = "MakeOrder";
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @(this.Html.DisplayName(Resource.Name))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.Quantity))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.Price))
+        </th>
+        <th>
+            @(this.Html.DisplayName(Resource.Discount))
+        </th>
+    </tr>
+    @foreach (var item in this.Model.OrderDetailsList)
+    {
+        <tr>
+            <td>
+                @item.ProductName
+            </td>
+            <td>
+                @item.Quantity
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @item.Discount
+            </td>
+        </tr>
+    }
+    <tr>
+        Total: @this.Model.OrderDetailsList.Sum(_ => _.Price)
+    </tr>
+</table>
+
+<table class="table">
+    @foreach (var item in this.Model.PaymentInfo)
+    {
+        <tr>
+            <td>
+                <img src="@item.ImagePath" title="" alt=@item.Type class="payment-image">
+            </td>
+            <td>
+                @(this.Html.DisplayFor(modelItem => item.Description))
+
+            </td>
+            <td class="pay-td">
+                <a href="@(this.Url.Action("Pay", "Order", new { paymentType = @item.Type }))">@Resource.PayBy @item.Type</a>
+            </td>
+        </tr>
+    }
+</table>

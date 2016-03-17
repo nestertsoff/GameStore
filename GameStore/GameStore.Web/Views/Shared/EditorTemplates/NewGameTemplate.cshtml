@@ -1,0 +1,89 @@
+﻿@model GameStore.Web.Areas.Common.Models.GameViewModel
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.Key, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.TextBoxFor(model => model.Key, new { @class = "form-control" } ))
+        @(this.Html.ValidationMessageFor(model => model.Key, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.TextBoxFor(model => model.Name, new { @class = "form-control" }))
+        @(this.Html.ValidationMessageFor(model => model.Name, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.NameRu, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.TextBoxFor(model => model.NameRu, new { @class = "form-control" }))
+        @(this.Html.ValidationMessageFor(model => model.NameRu, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.TextAreaFor(model => model.Description, new { @class = "form-control" }))
+        @(this.Html.ValidationMessageFor(model => model.Description, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.DescriptionRu, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.TextAreaFor(model => model.DescriptionRu, new { @class = "form-control" }))
+        @(this.Html.ValidationMessageFor(model => model.DescriptionRu, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.Price, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.TextBoxFor(model => model.Price, new { @class = "form-control", type = "number"} ))
+        @(this.Html.ValidationMessageFor(model => model.Price, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.UnitsInStock, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.TextBoxFor(model => model.UnitsInStock, new { @class = "form-control", type = "number" }))
+        @(this.Html.ValidationMessageFor(model => model.UnitsInStock, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.Discontinued, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.EditorFor(model => model.Discontinued, new { @class = "form-control" }))
+        @(this.Html.ValidationMessageFor(model => model.Discontinued, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.Publisher, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.DropDownListFor(model => model.PublisherId, this.Model.PublisherList, new { @class = "form-control" }))
+        @(this.Html.ValidationMessageFor(model => model.PublisherList, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.Genres, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.DropDownListFor(model => model.GenreIds, this.Model.GenreList, new { @class = "form-control", multiple = "multiple" }))
+        @(this.Html.ValidationMessageFor(model => model.GenreIds, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>
+
+<div class="form-group">
+    @(this.Html.LabelFor(model => model.PlatformTypes, new { @class = "control-label col-md-2" }))
+    <div class="col-md-3">
+        @(this.Html.DropDownListFor(model => model.PlatformTypeIds, this.Model.PlatformTypeList, new { @class = "form-control", multiple = "multiple" }))
+        @(this.Html.ValidationMessageFor(model => model.PlatformTypeIds, string.Empty, new { @class = "text-danger" }))
+    </div>
+</div>

@@ -1,0 +1,85 @@
+﻿@model GameStore.Web.Areas.Payment.Models.PaymentTypes.BankViewModel
+
+@{
+    ViewBag.Title = "Bank";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bank</h2>
+<div class="invoice-body">
+    <div class="invoice-data">
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.InvoiceDate):</span>
+            <span class="property-editor">@Html.DisplayFor(x => x.InvoiceDate)</span>
+        </div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.InvoiceNumber):</span>
+            <span class="property-editor">@Html.DisplayFor(x => x.InvoiceNumber)</span>
+        </div>
+    </div>
+    <div class="invoice-contractor">
+        <div>FROM:</div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.ContractorName)</span> :
+            <span class="property-editor">@Html.DisplayFor(x => x.ContractorName)</span>
+        </div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.ContractorAdress)</span> :
+            <span class="property-editor">@Html.DisplayFor(x => x.ContractorAdress)</span>
+        </div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.ContractorPhone)</span> :
+            <span class="property-editor">@Html.DisplayFor(x => x.ContractorPhone)</span>
+        </div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.ContractorEmail)</span> :
+            <span class="property-editor">@Html.DisplayFor(x => x.ContractorEmail)</span>
+        </div>
+    </div>
+    <div class="invoice-client">
+        <div>TO:</div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.ClientId):</span>
+            <span class="property-editor">@Html.DisplayFor(x => x.ClientId)</span>
+        </div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.ClientName):</span>
+            <span class="property-editor">@Html.DisplayFor(x => x.ClientName)</span>
+        </div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.ClientAdress):</span>
+            <span class="property-editor">@Html.DisplayFor(x => x.ClientAdress)</span>
+        </div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.ClientPhone):</span>
+            <span class="property-editor">@Html.DisplayFor(x => x.ClientPhone)</span>
+        </div>
+        <div class="form-group">
+            <span class="property-title">@Html.DisplayNameFor(x => x.ClientEmail):</span>
+            <span class="property-editor">@Html.DisplayFor(x => x.ClientEmail)</span>
+        </div>
+    </div>
+</div>
+<div class="invoice-table">
+    <table>
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(x => x.Order.OrderDetailsList.FirstOrDefault().ProductName)</td>
+                <td>@Html.DisplayNameFor(x => x.Order.OrderDetailsList.FirstOrDefault().Quantity)</td>
+                <td>@Html.DisplayNameFor(x => x.Order.OrderDetailsList.FirstOrDefault().Price)</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @Model.Order.OrderDetailsList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => item.ProductName)</td>
+                    <td>@Html.DisplayFor(x => item.Quantity)</td>
+                    <td>@Html.DisplayFor(x => item.Price)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@*@Html.ActionLink("Checkout", "Checkout", "Order")*@

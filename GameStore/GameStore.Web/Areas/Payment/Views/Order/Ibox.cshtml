@@ -1,0 +1,22 @@
+﻿@model GameStore.Web.Areas.Payment.Models.PaymentTypes.IBoxViewModel
+
+@{
+    ViewBag.Title = "Ibox";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ibox</h2>
+<div class="invoice-body">
+    <div class="form-group">
+        <span class="property-title">@Html.DisplayNameFor(x => x.InvoiceNumber):</span>
+        <span class="property-editor">@Html.DisplayFor(x => x.InvoiceNumber)</span>
+    </div>
+    <div class="form-group">
+        <span class="property-title">@Html.DisplayNameFor(x => x.AccountNumber):</span>
+        <span class="property-editor">@Html.DisplayFor(x => x.AccountNumber)</span>
+    </div>
+    <div class="form-group">
+        <span class="property-title">@Html.DisplayNameFor(x => x.Sum):</span>
+        <span class="property-editor">@Html.DisplayFor(x => x.Sum)</span>
+    </div>
+</div>

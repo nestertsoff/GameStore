@@ -1,0 +1,110 @@
+﻿@using GameStore.Web.Areas.Common.Models
+@using GameStore.Web.Resouces
+@model CommentsViewModel
+
+@{
+    this.ViewBag.Title = "Comments";
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="actionBox">
+    <ul class="commentList">
+        @foreach (var comment in this.Model.Comments.Where(_ => _.ParentComment == null).OrderBy(_ => _.Date))
+        {
+            <li>
+                <div class="comment">
+                    <div class="commenterImage">
+                        <img src="~/Content/images/anonymous.jpg" alt=""/>
+                    </div>
+                    <div class="commentBody">
+                        <div class="commenterName">
+                            <p class="">@comment.Name</p>
+                        </div>
+                        <div class="commentText">
+                            <p class="">@comment.Body</p>
+                        </div>
+                        <div>
+                            <span class="date sub-text">@comment.Date</span>
+
+                            @if (!comment.IsDeleted)
+                            {
+                                <a class="answerLink" id="@comment.Id" value="@comment.Name">@Resource.Answer</a>
+                                <a class="quoteLink" id="@comment.Id" data-name="@comment.Name" value="@comment.Body">@Resource.Quote</a>
+                                <a class="deleteLink" id="@comment.Id">@Resource.Delete</a>
+                            }
+                            
+                            @Html.ActionLink(@Resource.Ban, "Ban", "User", null, new { area = "User" })
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            if (comment.ChildComments != null)
+            {
+                foreach (var subcomment in comment.ChildComments.ToList().OrderBy(_ => _.Date))
+                {
+                    <li>
+                        <div class="subcomment">
+                            <div class="commenterImage">
+                                <img src="~/Content/images/anonymous.jpg" alt=""/>
+                            </div>
+                            <div class="commentBody">
+                                <div class="commenterName">
+                                    <p class="">@subcomment.Name</p>
+                                </div>
+
+                                @if (subcomment.HasQuote)
+                                {
+                                    <div class="">
+                                        <b>@subcomment.ParentComment.Name said: </b>
+                                        <p class="quoteText"><q>@subcomment.ParentComment.Body</q></p>
+                                    </div>
+                                }
+                                
+                                <div class="commentText">
+                                    <p class="">@subcomment.Body</p>
+                                </div>
+                                <div>
+                                    <span class="date sub-text">@subcomment.Date</span>
+                                    
+                                    @if (!comment.IsDeleted)
+                                    {
+                                        <a class="deleteLink" id="@subcomment.Id">@Resource.Delete</a>
+                                    }
+                                    
+                                    <a class="bunLink" id="@comment.Id">@Resource.Ban</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+        }
+    </ul>
+
+    @using (this.Html.BeginForm("Comments", "Comment", FormMethod.Post))
+    {
+        @(this.Html.AntiForgeryToken())
+
+        @(this.Html.ValidationSummary(true, "", new { @class = "text-danger" }))
+        <div class="col-lg-12 newcomment">
+            <div class="form-group col-lg-12" id="quoteBox">
+                <div id="quoteMassage"></div>
+            </div>
+            <div class="form-group col-lg-8">
+                @(this.Html.TextBoxFor(model => model.NewComment.Name, new { @class = "form-control", placeholder = "Your name" }))
+                @(this.Html.ValidationMessageFor(model => model.NewComment.Name, "", new { @class = "text-danger" }))
+            </div>
+            <div class="form-group col-lg-4">
+                <input type="submit" value=@Resource.Add class="btn btn-default"/>
+            </div>
+            <div class="form-group col-lg-12">
+                @(this.Html.TextAreaFor(model => model.NewComment.Body, new { @class = "form-control", placeholder = "Your comment", id = "comment-area", name = "anchor" }))
+                @(this.Html.ValidationMessageFor(model => model.NewComment.Body, "", new { @class = "text-danger" }))
+            </div>
+            @(this.Html.HiddenFor(model => model.NewComment.ParentCommentId))
+            @(this.Html.HiddenFor(model => model.NewComment.GameId))
+            @(this.Html.HiddenFor(model => model.NewComment.HasQuote))
+        </div>
+    }
+</div>

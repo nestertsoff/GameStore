@@ -1,0 +1,2 @@
+message: Validation failed: 
+ -- 'Id' should not be empty. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Game/game_33/Comments |              logger GameStore.BLL.Services.Abstract.ICommentService |              callSite GameStore.BLL.Services.Concrete.CommentService.Create |             eventProperties: 

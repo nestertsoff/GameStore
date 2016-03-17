@@ -1,0 +1,136 @@
+﻿@using GameStore.Web.Extensions
+@using GameStore.Web.Resouces
+@model GameStore.Web.Areas.Common.Models.GameFilterViewModel
+
+@{
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="filter">
+    @(this.Html.Label(Resource.Genres + ":"))
+
+    <div class="genreBox">
+
+        @foreach (var genre in this.Model.Genres)
+        {
+            <div class="genreCheck">
+                @(this.Html.CheckBox(genre.Name, new { id = genre.Id }))
+                @(this.Html.Label(genre.Name, new { @for = genre.Id }))
+
+
+                @if (genre.ChildGenres.Any())
+                {
+                    foreach (var subgenre in genre.ChildGenres.ToList())
+                    {
+                        <div class="subgenreCheck">
+                            @(this.Html.CheckBox(subgenre.Name, new { id = subgenre.Id }))
+                            @(this.Html.Label(subgenre.Name, new { @for = subgenre.Id }))
+                        </div>
+                    }
+                }
+            </div>
+        }
+
+    </div>
+
+    <br/>
+
+    @(this.Html.Label(Resource.Platforms + ":"))
+
+    <div class="platformBox">
+
+        @foreach (var platform in this.Model.Platforms)
+        {
+            <div class="platformCheck">
+                @(this.Html.CheckBox(platform.Type, new { id = platform.Id }))
+                @(this.Html.Label(platform.Type, new { @for = platform.Id }))
+            </div>
+        }
+
+        <br/>
+
+        @(this.Html.Label(Resource.Publishers + ":"))
+
+        <div class="publisherBox">
+
+            @foreach (var publisher in this.Model.Publishers)
+            {
+                <div class="pablisherCheck">
+                    @(this.Html.CheckBox(publisher.CompanyName, new { id = publisher.Id }))
+                    @(this.Html.Label(publisher.CompanyName, new { @for = publisher.Id }))
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+    <br/>
+
+    <div class="form-group">
+        @(this.Html.LabelFor(model => model.SortType, new { @class = "control-label col-md-6" }))
+        <div class="col-md-10">
+            @(this.Html.DropDownListFor(model => model.SortType, this.Model.SortType.ToSelectList(), new { @class = "form-control" }))
+            @(this.Html.ValidationMessageFor(model => model.SortType, string.Empty, new { @class = "text-danger" }))
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="form-group">
+        @(this.Html.LabelFor(model => model.PagingInfo, new { @class = "control-label col-md-6" }))
+        <div class="col-md-10">
+            @(this.Html.DropDownListFor(model => model.PagingInfo.PaginationType, this.Model.PagingInfo.PaginationType.ToSelectList(), new { @class = "form-control" }))
+            @(this.Html.ValidationMessageFor(model => model.PagingInfo.PaginationType, string.Empty, new { @class = "text-danger" }))
+        </div>
+    </div>
+
+    <br />
+
+    @(this.Html.Label(Resource.Price + ":"))
+
+    <div class="form-group">
+        @(this.Html.LabelFor(model => model.MinPrice, new { @class = "control-label col-md-4" }))
+        <div class="col-md-6">
+            @(this.Html.TextBoxFor(model => model.MinPrice, new { @class = "form-control", type = "number" }))
+            @(this.Html.ValidationMessageFor(model => model.MinPrice, string.Empty, new { @class = "text-danger" }))
+        </div>
+        @(this.Html.LabelFor(model => model.MaxPrice, new { @class = "control-label col-md-4" }))
+        <div class="col-md-6">
+            @(this.Html.TextBoxFor(model => model.MaxPrice, new { @class = "form-control", type = "number" }))
+            @(this.Html.ValidationMessageFor(model => model.MaxPrice, string.Empty, new { @class = "text-danger" }))
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="form-group">
+        @(this.Html.LabelFor(model => model.PeriodType, new { @class = "control-label col-md-6" }))
+        <div class="col-md-10">
+            @(this.Html.DropDownListFor(model => model.PeriodType, this.Model.PeriodType.ToSelectList(), new { @class = "form-control" }))
+            @(this.Html.ValidationMessageFor(model => model.PeriodType, string.Empty, new { @class = "text-danger" }))
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="form-group">
+        @(this.Html.LabelFor(model => model.SearchString, new { @class = "control-label col-md-6" }))
+        <div class="col-md-10">
+            @(this.Html.TextBoxFor(model => model.SearchString, new { @class = "form-control" }))
+            @(this.Html.ValidationMessageFor(model => model.SearchString, string.Empty, new { @class = "text-danger" }))
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="col-md-10">
+        @(this.Html.ActionLink(Resource.Filter, "Games", "Game", null, new { id = "filterLink" }))
+    </div>
+</div>
+
+<div id="gameList">
+    @(this.Html.Partial("_GameList", this.Model))
+</div>
+

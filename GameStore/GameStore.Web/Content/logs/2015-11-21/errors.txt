@@ -1,0 +1,6 @@
+message: Validation failed: 
+ -- The specified condition was not met for 'Id'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Comment/Remove/4aafb920-d74b-4b80-abe6-9576159b9759 |              logger GameStore.Application.Services.Abstract.ICommentService |              callSite GameStore.Application.Services.Concrete.CommentService.Delete |             eventProperties: 
+message: Validation failed: 
+ -- ”казанное условие не было выполнено дл€ 'Id'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Comment/Remove/4aafb920-d74b-4b80-abe6-9576159b9759 |              logger GameStore.Application.Services.Abstract.ICommentService |              callSite GameStore.Application.Services.Concrete.CommentService.Delete |             eventProperties: 
+message: Validation failed: 
+ -- The specified condition was not met for 'Id'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Comment/Remove/4aafb920-d74b-4b80-abe6-9576159b9759 |              logger GameStore.Application.Services.Abstract.ICommentService |              callSite GameStore.Application.Services.Concrete.CommentService.Delete |             eventProperties: 

@@ -1,0 +1,140 @@
+﻿@import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+hr { clear: both; }
+
+.main-content { margin-top: 25px; }
+
+.dl-horizontal { margin-top: 40px; }
+
+header {
+    height: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#add-game { margin-left: 5px; }
+
+.left-bar {
+    float: left;
+    margin-left: 15px;
+}
+
+.right-bar {
+    float: right;
+    margin-right: 15px;
+}
+
+.link-bar { margin-left: 15px; }
+
+.bar a { margin: 5px; }
+
+.newcomment {
+    margin: auto;
+    width: 700px;
+}
+
+.subcomment { margin-left: 50px; }
+
+.actionBox {
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}
+
+.quoteText {
+    font-style: italic;
+    word-wrap: break-word;
+}
+
+.filter {
+    border-top: 1px solid #ddd;
+    float: left;
+    margin-left: 15px;
+    width: 200px;
+}
+
+.table {
+    border-left: 1px solid #ddd;
+    width: calc(100% - 235px);
+}
+
+.subgenreCheck { margin-left: 15px; }
+
+.actionBox .form-group * { width: 100%; }
+
+.comment { width: 650px; }
+
+.comment, .subcomment a {
+    cursor: pointer;
+    font-size: small;
+    margin-left: 10px;
+}
+
+.commentList {
+    list-style: none;
+    max-height: 400px;
+    overflow: auto;
+    padding: 0;
+}
+
+.commentBody { margin-left: 50px; }
+
+.commenterName {
+    color: brown;
+    font-weight: bold;
+    margin: 0;
+}
+
+#currentPage {
+    font-size: large;
+    font-weight: bold;
+}
+
+.commentText p {
+    height: auto;
+    word-wrap: break-word;
+}
+
+.commentList li {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.payment-image {
+    height: 100px;
+    width: 100px;
+}
+
+.pay-td { width: 150px; }
+
+.commenterImage {
+    clear: both;
+    float: left;
+    height: 100%;
+    margin-right: 20px;
+    width: 30px;
+}
+
+.commenterImage img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.sub-text {
+    color: #aaa;
+    font-family: verdana;
+    font-size: 11px;
+}
+
+.actionBox { padding: 10px; }
+
+.pageLink {
+    font-family: verdana;
+    margin: 3px;
+}

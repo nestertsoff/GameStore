@@ -1,0 +1,2 @@
+message: Validation failed: 
+ -- The specified condition was not met for 'Id'. |              username: notauth:: |              serverName: localhost |              port: 59495 |              url: /Comment/Remove/4e398013-8dc5-488c-929f-b72187847b21 |              logger GameStore.Application.Services.Abstract.ICommentService |              callSite GameStore.Application.Services.Concrete.CommentService.Delete |             eventProperties: 
